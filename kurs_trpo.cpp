@@ -29,6 +29,8 @@ int main() {
 				words[i + 1] = temp;
 			}
 
-
+	for (int i = 0; i < num; i++) {
+		printf("%s\n", &str[words[i]]);
+	}
 	return 0;
 }
