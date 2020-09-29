@@ -1,13 +1,10 @@
 ﻿#include <string.h>
 #include <iostream>
 #include <conio.h>
+#include <C:\Users\User\source\repos\kurs_trpo\kurs_trpo/sorted.h>
+#include <C:\Users\User\source\repos\kurs_trpo\kurs_trpo/words.h>
+#include <C:\Users\User\source\repos\kurs_trpo\kurs_trpo/printer.h>
 using namespace std;
-
-void print_words(int num, char* words, char* str) {
-	for (int i = 0; i < num; i++) {
-		printf("%s\n", &str[words[i]]);
-	}
-}
 
 int main() {
 	setlocale(LC_ALL, "Rus");
@@ -16,27 +13,8 @@ int main() {
 	int num = 0;
 	cout << "Введите текст: " << endl;
 	gets_s(str);
-	for (int i = 0, fl = 1; str[i]; i++) {
-		if (str[i] == ' ') {
-			str[i] = 0;
-			fl = 1;
-		}
-		else if (fl) {
-			words[num++] = i;
-			fl = 0;
-		}
-	}
-
-	for (int j = num - 1; j > 0; j--) {
-		for (int i = 0; i < j; i++) {
-			if (strcmp(&str[words[i]], &str[words[i + 1]]) > 0)
-			{
-				int temp = words[i];
-				words[i] = words[i + 1];
-				words[i + 1] = temp;
-			}
-		}
-	}
+	num = words_h(str, words, num);
+	sorted_h(str, words, num);
 	print_words(num, words, str);
 	return 0;
 }

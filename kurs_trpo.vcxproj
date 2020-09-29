@@ -141,6 +141,11 @@
   <ItemGroup>
     <ClCompile Include="kurs_trpo.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="printer.h" />
+    <ClInclude Include="sorted.h" />
+    <ClInclude Include="words.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
